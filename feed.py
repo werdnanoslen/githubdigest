@@ -33,6 +33,13 @@ tweetContent = ''
 if numEventsYesterday == 1:
     tweetContent = eventsYesterday
 elif numEventsYesterday > 1:
-    tweetContent = eventsYesterday
+    tweetContent = 'Among other things, I ' + eventsYesterday[1]
 
-print(tweetContent)
+token = ''
+token_key = ''
+con_secret = ''
+con_secret_key = ''
+twitterConnection = Twitter(auth=OAuth(token, token_key, con_secret, con_secret_key))
+statusUpdate = twitterConnection.statuses.update(status=tweetContent)
+
+print(statusUpdate)
