@@ -31,9 +31,9 @@ for i in range(len(feed.entries)):
 numEventsYesterday = len(eventsYesterday)
 tweetContent = ''
 if numEventsYesterday == 1:
-    tweetContent = eventsYesterday
+    tweetContent = eventsYesterday[0]
 elif numEventsYesterday > 1:
-    tweetContent = 'Among other things, I ' + eventsYesterday[1]
+    tweetContent = 'Among other things, I ' + eventsYesterday[0]
 
 token = ''
 token_key = ''
